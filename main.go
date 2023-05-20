@@ -9,6 +9,6 @@ import (
 func main() {
 	fmt.Println("DSA")
 
-	sorting.BubbleSort()
+	sorting.SelectionSort()
 
 }
