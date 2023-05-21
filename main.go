@@ -3,12 +3,16 @@ package main
 import (
 	"fmt"
 
-	"main.go/dsa/sorting"
+	"main.go/dsa/queue"
 )
 
 func main() {
 	fmt.Println("DSA")
 
-	sorting.SelectionSort()
+	// sorting.SelectionSort()
+
+	// stack.StackDS()
+
+	queue.QueueDS()
 
 }
