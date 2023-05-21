@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"main.go/dsa/sorting"
+	"main.go/dsa/searching"
 )
 
 func main() {
@@ -15,14 +15,18 @@ func main() {
 
 	var arr []int = []int{2, 42, 2, 3, 5, 8}
 
-	var i int = 0
-	var j int = len(arr) - 1
+	// var i int = 0
+	// var j int = len(arr) - 1
 
-	fmt.Println(i, j)
+	// fmt.Println(i, j)
 
 	// queue.QueueDS()
 
-	sorting.QuickSort(arr, i, j)
+	// sorting.QuickSort(arr, i, j)
 
-	fmt.Println(arr)
+	index, found := searching.LinearSearch(arr, 42)
+
+	fmt.Print(index, found)
+
+	// fmt.Println(arr)
 }
