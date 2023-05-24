@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"main.go/dsa/searching"
+	linkedlist "main.go/dsa/linkedList"
 )
 
 func main() {
@@ -13,7 +13,7 @@ func main() {
 
 	// stack.StackDS()
 
-	var arr []int = []int{2, 42, 2, 3, 5, 8}
+	// var arr []int = []int{2, 42, 2, 3, 5, 8}
 
 	// var i int = 0
 	// var j int = len(arr) - 1
@@ -24,9 +24,11 @@ func main() {
 
 	// sorting.QuickSort(arr, i, j)
 
-	index, found := searching.LinearSearch(arr, 42)
+	// index, found := searching.LinearSearch(arr, 42)
 
-	fmt.Print(index, found)
+	// fmt.Print(index, found)
+
+	linkedlist.LinkedListDSA()
 
 	// fmt.Println(arr)
 }
