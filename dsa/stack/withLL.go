@@ -18,7 +18,7 @@ func (l *StackWithLL) push(value int) {
 
 	newNode := &Node{
 		data: value,
-		next: &Node{},
+		next: nil,
 		prev: &Node{},
 	}
 

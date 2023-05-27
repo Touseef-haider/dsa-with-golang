@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"main.go/dsa/stack"
+	"main.go/dsa/queue"
 )
 
 func main() {
@@ -36,5 +36,7 @@ func main() {
 
 	// fmt.Println(arr)
 
-	stack.StackWithLinkedList()
+	// stack.StackWithLinkedList()
+
+	queue.QueueLinkedList()
 }
