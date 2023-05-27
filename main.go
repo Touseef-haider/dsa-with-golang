@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	linkedlist "main.go/dsa/linkedList"
+	"main.go/dsa/stack"
 )
 
 func main() {
@@ -28,11 +28,13 @@ func main() {
 
 	// fmt.Print(index, found)
 
-	linkedlist.LinkedListDSA()
+	// linkedlist.LinkedListDSA()
 
 	// fmt.Println(arr)
 
 	// searching.BinarySearch(arr, 42)
 
 	// fmt.Println(arr)
+
+	stack.StackWithLinkedList()
 }
