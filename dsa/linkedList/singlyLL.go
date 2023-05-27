@@ -41,6 +41,15 @@ func (l *LinkedList) traverse() {
 	}
 
 }
+func traverseFromHead(head *Node) {
+	var curr = head
+
+	for curr != nil {
+		fmt.Println(curr.data)
+		curr = curr.next
+	}
+
+}
 
 func (l *LinkedList) deleteNode(value int) {
 	curr := l.head
@@ -95,6 +104,24 @@ func (l *LinkedList) updateNode(value int, newValue int) {
 
 }
 
+func (l *LinkedList) reverse() *Node {
+
+	curr := l.head
+
+	var prev *Node
+
+	fmt.Println(prev)
+
+	for curr != nil {
+		temp := curr.next
+		curr.next = prev
+		prev = curr
+		curr = temp
+	}
+
+	return prev
+}
+
 func LinkedListDSA() {
 
 	var linkedList LinkedList = LinkedList{}
@@ -104,13 +131,15 @@ func LinkedListDSA() {
 	linkedList.addNode(5)
 	linkedList.addNode(6)
 
-	linkedList.traverse()
-
 	fmt.Println("End")
 
-	linkedList.deleteNode(5)
+	// linkedList.deleteNode(5)
 
-	linkedList.updateNode(5, 4)
+	// linkedList.updateNode(5, 4)
 
 	linkedList.traverse()
+	head := linkedList.reverse()
+	fmt.Println("head", head)
+	traverseFromHead(head)
+
 }
