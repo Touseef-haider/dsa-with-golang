@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"main.go/dsa/queue"
+	"main.go/dsa/problems"
 )
 
 func main() {
@@ -38,5 +38,14 @@ func main() {
 
 	// stack.StackWithLinkedList()
 
-	queue.QueueLinkedList()
+	// queue.QueueLinkedList()
+
+	// problems.TwoSum()
+
+	// problems.AddTwoNumbersProb()
+
+	var str *string = new(string)
+	*str = "aba"
+
+	problems.LongestNonRepeatedSubStr(str)
 }

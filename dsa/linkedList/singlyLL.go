@@ -7,11 +7,23 @@ type Node struct {
 	next *Node
 }
 
+func (n *Node) GetNode() *Node {
+	return n
+}
+
+func (n *Node) GetData() int {
+	return n.data
+}
+
+func (n *Node) ReturnNext() *Node {
+	return n.next
+}
+
 type LinkedList struct {
 	head *Node
 }
 
-func (l *LinkedList) addNode(value int) {
+func (l *LinkedList) AddNode(value int) {
 	var newNode = &Node{
 		data: value,
 		next: nil,
@@ -32,7 +44,7 @@ func (l *LinkedList) addNode(value int) {
 
 }
 
-func (l *LinkedList) traverse() {
+func (l *LinkedList) Traverse() {
 	var curr = l.head
 
 	for curr != nil {
@@ -51,7 +63,7 @@ func traverseFromHead(head *Node) {
 
 }
 
-func (l *LinkedList) deleteNode(value int) {
+func (l *LinkedList) DeleteNode(value int) {
 	curr := l.head
 
 	if curr == nil {
@@ -78,7 +90,7 @@ func (l *LinkedList) deleteNode(value int) {
 
 }
 
-func (l *LinkedList) updateNode(value int, newValue int) {
+func (l *LinkedList) UpdateNode(value int, newValue int) {
 
 	curr := l.head
 
@@ -104,13 +116,11 @@ func (l *LinkedList) updateNode(value int, newValue int) {
 
 }
 
-func (l *LinkedList) reverse() *Node {
+func (l *LinkedList) Reverse() *Node {
 
 	curr := l.head
 
 	var prev *Node
-
-	fmt.Println(prev)
 
 	for curr != nil {
 		temp := curr.next
@@ -126,10 +136,10 @@ func LinkedListDSA() {
 
 	var linkedList LinkedList = LinkedList{}
 
-	linkedList.addNode(2)
-	linkedList.addNode(3)
-	linkedList.addNode(5)
-	linkedList.addNode(6)
+	linkedList.AddNode(2)
+	linkedList.AddNode(3)
+	linkedList.AddNode(5)
+	linkedList.AddNode(6)
 
 	fmt.Println("End")
 
@@ -137,8 +147,8 @@ func LinkedListDSA() {
 
 	// linkedList.updateNode(5, 4)
 
-	linkedList.traverse()
-	head := linkedList.reverse()
+	linkedList.Traverse()
+	head := linkedList.Reverse()
 	fmt.Println("head", head)
 	traverseFromHead(head)
 
