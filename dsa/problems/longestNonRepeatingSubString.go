@@ -15,10 +15,9 @@ func LongestNonRepeatedSubStr(s *string) {
 
 	var splitted = strings.Split(*s, "")
 
-	fmt.Println(res, hm, splitted)
+	fmt.Println(res, hm, splitted, len(splitted))
 
 	if len(*s) == 1 {
-		fmt.Println(*s)
 		return
 	}
 
@@ -28,7 +27,8 @@ func LongestNonRepeatedSubStr(s *string) {
 		} else {
 			isRepeated = true
 
-			if len(res) <= len(hm) {
+			if len(res) < len(hm) {
+				res = ""
 				for value, _ := range hm {
 					res += value
 				}
@@ -45,10 +45,9 @@ func LongestNonRepeatedSubStr(s *string) {
 			res += value
 		}
 
-		fmt.Println(res)
 		return
 	}
 
-	fmt.Println(hm, res)
+	fmt.Println(res)
 
 }
