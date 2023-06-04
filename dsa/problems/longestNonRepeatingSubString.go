@@ -3,51 +3,61 @@ package problems
 import (
 	"fmt"
 	"strings"
+
+	"main.go/utils"
 )
 
-func LongestNonRepeatedSubStr(s *string) {
+func LongestNonRepeatedSubStr(s string) {
+	fmt.Println(s)
 
-	var res string
+	var splitted []string = strings.Split(s, "")
 
-	var isRepeated bool = false
+	var l, r int
 
-	var hm map[string]string = map[string]string{}
+	var windowCount []string = []string{}
 
-	var splitted = strings.Split(*s, "")
+	var result []string = []string{}
 
-	fmt.Println(res, hm, splitted, len(splitted))
+	for r < len(splitted) {
 
-	if len(*s) == 1 {
-		return
-	}
+		var found bool = utils.ElementExistsInArray(windowCount, splitted[r])
 
-	for i := 0; i < len(splitted); i++ {
-		if hm[splitted[i]] != splitted[i] {
-			hm[splitted[i]] = splitted[i]
-		} else {
-			isRepeated = true
-
-			if len(res) < len(hm) {
-				res = ""
-				for value, _ := range hm {
-					res += value
-				}
+		if !found {
+			windowCount = append(windowCount, splitted[r])
+			if len(windowCount) >= len(result) {
+				result = []string{}
+				result = append(result, windowCount...)
 			}
+			r++
+		} else {
+			fmt.Println("before window", windowCount)
 
-			hm = map[string]string{}
-			hm[splitted[i]] = splitted[i]
+			if len(windowCount) >= len(result) {
+				result = []string{}
+				result = append(result, windowCount...)
+			}
+			fmt.Println("result", result)
+			data := utils.RemoveIndex(windowCount, 0)
 
+			windowCount = data
+			fmt.Println("after window", windowCount)
+
+			l++
 		}
+
 	}
 
-	if !isRepeated {
-		for value, _ := range hm {
-			res += value
-		}
+	if len(result) == 0 {
 
-		return
+		fmt.Println(len(windowCount))
+
+		fmt.Println(windowCount)
+
+	} else {
+
+		fmt.Println(len(result))
+
+		fmt.Println(result)
 	}
-
-	fmt.Println(res)
 
 }

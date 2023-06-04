@@ -44,8 +44,7 @@ func main() {
 
 	// problems.AddTwoNumbersProb()
 
-	var str *string = new(string)
-	*str = "pwwkew"
+	var str string = "pwwkew"
 
 	problems.LongestNonRepeatedSubStr(str)
 }
